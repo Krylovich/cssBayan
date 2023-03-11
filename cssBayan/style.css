@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(45deg, #f5f7fa, #c3cfe2b0);
+    background: linear-gradient(45deg, #f5f7fac6, #c3cfe29a);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -27,9 +27,9 @@ input {
 }
 
 .container {
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
-    padding: 3% 0;
+    padding: 2% 0 3%;
 }
 
 .main-title {
@@ -52,7 +52,6 @@ input {
 }
 
 .bayan-item-icon {
-    position: relative;
     width: 1rem;
     transform: rotate(45deg);
     z-index: 0;
@@ -73,7 +72,7 @@ input {
     line-height: 1.2rem;
     cursor: pointer;
     font-size: 1.6rem;
-    color: #29292998;
+    color: #29292979;
     transition: all .4s ease-in-out;
     z-index: 1;
     margin: 0;
@@ -97,8 +96,11 @@ input:checked ~.bayan-item-label {
 
 input:checked ~.bayan-item-icon,
 .bayan-item:hover .bayan-item-icon {
-    opacity: 1;
     transform: rotate(0deg);
+}
+
+.bayan-item:hover .bayan-item-icon {
+    opacity: 1;
 }
 
 input:checked ~.bayan-item-content,
@@ -108,5 +110,8 @@ input:checked ~.bayan-item-content,
     margin: 2% auto;
     opacity: 1;
 }
+
+
+
 
 
