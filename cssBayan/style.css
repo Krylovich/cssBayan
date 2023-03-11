@@ -2,6 +2,7 @@ body {
     background: linear-gradient(45deg, #f5f7fa, #c3cfe2b0);
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100vh;
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: #292929;
 }
@@ -14,19 +15,25 @@ img {
 }
 
 input {
-    position: absolute;
+    display: none;
     opacity: 0;
     z-index: -1;
 }
 
 .main {
-    width: 70vw;
-    height: auto;
-    margin: 10vh auto 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 3% 0;
 }
 
 .main-title {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     margin-bottom: 2%;
     font-weight: 500;
 }
@@ -37,20 +44,21 @@ input {
 }
 
 .bayan-item {
+    position: relative;
     width: 100%;
     overflow: hidden;
-    margin: 2% auto;
-    padding-top: 1%;
+    padding: 2% 0 2% 0;
     border-top: solid 2px #c2c2c2;
 }
 
 .bayan-item-icon {
-    width: 1.2rem;
+    position: relative;
+    width: 1rem;
     transform: rotate(45deg);
     z-index: 0;
-    cursor: pointer;
     opacity: 0;
-    transition: all .35s;
+    transition: all .4s ease-in-out;
+    margin-left: 98%;
 }
 
 .bayan:hover .bayan-item-icon {
@@ -58,12 +66,17 @@ input {
 }
 
 .bayan-item-label {
+    display: inline-block;
+    position: absolute;
     width: 100%;
+    height: 100%;
+    line-height: 1.2rem;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #29292998;
-    transition: color .35s;
+    transition: all .4s ease-in-out;
     z-index: 1;
+    margin: 0;
 }
 
 .bayan:hover .bayan-item-label {
@@ -71,9 +84,10 @@ input {
 }
 
 .bayan-item-content {
-    width: 10%;
+    width: 0;
     margin: 0 auto;
     max-height: 0;
+    opacity: 0;
     transition: all .35s;
 }
 
@@ -81,14 +95,18 @@ input:checked ~.bayan-item-label {
     color: #292929;
 }
 
-input:checked ~.bayan-item-icon {
+input:checked ~.bayan-item-icon,
+.bayan-item:hover .bayan-item-icon {
     opacity: 1;
     transform: rotate(0deg);
 }
 
-input:checked ~.bayan-item-content {
+input:checked ~.bayan-item-content,
+.bayan-item:hover .bayan-item-content {
     max-height: 100vh;
-    width: 65%;
+    width: 50%;
+    margin: 2% auto;
+    opacity: 1;
 }
 
 
