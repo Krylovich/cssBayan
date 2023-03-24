@@ -1,0 +1,179 @@
+body {
+    background: linear-gradient(45deg, #f5f7fac6, #c3cfe29a);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: "Arial", sans-serif;
+    color: #292929;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    display: none;
+    opacity: 0;
+    z-index: -1;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2% 0 3%;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 2%;
+    font-weight: 500;
+}
+
+/* Bayan */
+.bayan {
+    overflow: hidden;
+}
+
+.bayan-item {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 2% 0 2% 0;
+    border-top: solid 2px #c2c2c2;
+}
+
+.bayan-item-icon {
+    width: 1rem;
+    transform: rotate(45deg);
+    z-index: 0;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+    margin-left: 98%;
+}
+
+.bayan-item-label {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 96%;
+    line-height: 1.2rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #29292979;
+    transition: all .4s ease-in-out;
+    z-index: 1;
+    margin: 0;
+}
+
+.bayan-item-content {
+    width: 0;
+    margin: 0 auto;
+    max-height: 0;
+    opacity: 0;
+    transition: all .35s;
+}
+
+input:checked ~.bayan-item-label {
+    color: #292929;
+}
+
+input:checked ~.bayan-item-icon{
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+input:checked ~.bayan-item-content {
+    max-height: 100vh;
+    width: 50%;
+    margin: 2% auto;
+    opacity: 1;
+}
+
+/* Media Queries */
+@media (min-width: 1021px) {
+    .bayan-item:hover .bayan-item-content {
+        max-height: 100vh;
+        width: 50%;
+        margin: 2% auto;
+        opacity: 1;
+    }
+
+    .bayan-item:hover .bayan-item-icon {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    .bayan:hover .bayan-item-label {
+        color: #292929;
+    }
+
+    .bayan:hover .bayan-item-icon {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1020px) {
+    .container {
+        width: 92%;
+        padding-top: 7%;
+    }
+}
+
+@media (max-width: 891px) {
+    .container {
+        width: 95%;
+    }
+
+    .main-title {
+        font-size: 2.1rem;
+        margin-bottom: 3%;
+    }
+
+    .bayan-item-label {
+        font-size: 1.3rem;
+    }
+
+    .bayan-item-icon {
+        opacity: 0.5;
+        margin-left: 97%;
+    }
+
+    input:checked ~.bayan-item-content {
+        width: 84%;
+        margin: 5% auto;
+    }
+
+}
+
+@media (max-width: 630px) {
+    .main-title {
+        font-size: 1.2rem;
+    }
+
+    input:checked ~.bayan-item-content {
+        width: 96%;
+    }
+
+    .bayan-item-icon {
+        width: .6rem;
+        margin-left: 96%;
+    }
+
+    .bayan-item-label {
+        font-size: 0.77rem;
+    }
+}
+
+
+
+
+
